@@ -2,6 +2,7 @@ import re
 import os
 from pathlib import Path
 
+import spacy
 import torch
 from transformers import AutoTokenizer, AutoModelForTokenClassification
 from presidio_analyzer import AnalyzerEngine
@@ -20,18 +21,12 @@ nlp_config = {
 }
 
 try:
-    import spacy
     spacy.load("en_core_web_sm")
-except OSError:
-    import subprocess
-    import sys
-    subprocess.check_call([
-        sys.executable,
-        "-m",
-        "spacy",
-        "download",
-        "en_core_web_sm"
-    ])
+except OSError as e:
+    raise RuntimeError(
+        "spaCy English model is not installed. "
+        "Check the Streamlit dependencies."
+    ) from e
 
 provider = NlpEngineProvider(nlp_configuration=nlp_config)
 nlp_engine = provider.create_engine()
