@@ -1,0 +1,560 @@
+{
+  "test_notes": 20,
+  "presidio_baseline": {
+    "overall": {
+      "precision": 0.5517,
+      "recall": 0.6809,
+      "f1": 0.6095,
+      "leaked_notes": 13,
+      "total_notes": 20,
+      "leak_rate": 0.65
+    },
+    "per_entity": {
+      "ACCOUNT_ID": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1
+      },
+      "AGE_OVER_89": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 3
+      },
+      "DATE": {
+        "precision": 0.5556,
+        "recall": 1.0,
+        "f1": 0.7143,
+        "tp": 5,
+        "fp": 4,
+        "fn": 0
+      },
+      "EMAIL": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0
+      },
+      "FACILITY": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 2
+      },
+      "HEALTH_PLAN_ID": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1
+      },
+      "IP_ADDRESS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "LICENSE_ID": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1
+      },
+      "LOCATION": {
+        "precision": 0.5,
+        "recall": 0.4,
+        "f1": 0.4444,
+        "tp": 2,
+        "fp": 2,
+        "fn": 3
+      },
+      "MRN": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 2
+      },
+      "ORGANIZATION": {
+        "precision": 0.0,
+        "recall": 0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 4,
+        "fn": 0
+      },
+      "PERSON": {
+        "precision": 0.9048,
+        "recall": 0.95,
+        "f1": 0.9268,
+        "tp": 19,
+        "fp": 2,
+        "fn": 1
+      },
+      "PHONE": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571,
+        "tp": 3,
+        "fp": 1,
+        "fn": 0
+      },
+      "SSN": {
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1
+      },
+      "UK_NHS": {
+        "precision": 0.0,
+        "recall": 0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 2,
+        "fn": 0
+      },
+      "URL": {
+        "precision": 0.0,
+        "recall": 0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 2,
+        "fn": 0
+      },
+      "US_BANK_NUMBER": {
+        "precision": 0.0,
+        "recall": 0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 4,
+        "fn": 0
+      },
+      "US_DRIVER_LICENSE": {
+        "precision": 0.0,
+        "recall": 0,
+        "f1": 0,
+        "tp": 0,
+        "fp": 5,
+        "fn": 0
+      }
+    },
+    "errors": [
+      {
+        "note_id": 1,
+        "missing": [
+          {
+            "text": "14 Oak Street",
+            "type": "LOCATION"
+          }
+        ],
+        "false_positives": [
+          {
+            "text": "Oak Street",
+            "type": "LOCATION"
+          }
+        ]
+      },
+      {
+        "note_id": 2,
+        "missing": [
+          {
+            "text": "Dr. Robert Wilson",
+            "type": "PERSON"
+          },
+          {
+            "text": "Green Valley Hospital",
+            "type": "FACILITY"
+          }
+        ],
+        "false_positives": [
+          {
+            "text": "Robert Wilson",
+            "type": "PERSON"
+          },
+          {
+            "text": "Green Valley Hospital",
+            "type": "ORGANIZATION"
+          }
+        ]
+      },
+      {
+        "note_id": 3,
+        "missing": [
+          {
+            "text": "age 94",
+            "type": "AGE_OVER_89"
+          }
+        ],
+        "false_positives": [
+          {
+            "text": "9876543210",
+            "type": "DATE"
+          },
+          {
+            "text": "9876543210",
+            "type": "UK_NHS"
+          },
+          {
+            "text": "9876543210",
+            "type": "US_BANK_NUMBER"
+          },
+          {
+            "text": "9876543210",
+            "type": "US_DRIVER_LICENSE"
+          }
+        ]
+      },
+      {
+        "note_id": 4,
+        "missing": [],
+        "false_positives": [
+          {
+            "text": "example.com",
+            "type": "URL"
+          }
+        ]
+      },
+      {
+        "note_id": 5,
+        "missing": [
+          {
+            "text": "MRN: AB12345678",
+            "type": "MRN"
+          }
+        ],
+        "false_positives": []
+      },
+      {
+        "note_id": 7,
+        "missing": [],
+        "false_positives": [
+          {
+            "text": "2125550199",
+            "type": "DATE"
+          },
+          {
+            "text": "2125550199",
+            "type": "UK_NHS"
+          },
+          {
+            "text": "2125550199",
+            "type": "US_BANK_NUMBER"
+          },
+          {
+            "text": "2125550199",
+            "type": "US_DRIVER_LICENSE"
+          }
+        ]
+      },
+      {
+        "note_id": 8,
+        "missing": [
+          {
+            "text": "55 Lake Road",
+            "type": "LOCATION"
+          }
+        ],
+        "false_positives": [
+          {
+            "text": "Texas",
+            "type": "LOCATION"
+          }
+        ]
+      },
+      {
+        "note_id": 9,
+        "missing": [
+          {
+            "text": "123-45-6789",
+            "type": "SSN"
+          }
+        ],
+        "false_positives": [
+          {
+            "text": "SSN",
+            "type": "ORGANIZATION"
+          }
+        ]
+      },
+      {
+        "note_id": 12,
+        "missing": [
+          {
+            "text": "Member ID: HP123456789",
+            "type": "HEALTH_PLAN_ID"
+          }
+        ],
+        "false_positives": []
+      },
+      {
+        "note_id": 13,
+        "missing": [
+          {
+            "text": "Account Number: 7788990011",
+            "type": "ACCOUNT_ID"
+          }
+        ],
+        "false_positives": [
+          {
+            "text": "7788990011",
+            "type": "PHONE"
+          },
+          {
+            "text": "7788990011",
+            "type": "US_BANK_NUMBER"
+          },
+          {
+            "text": "7788990011",
+            "type": "US_DRIVER_LICENSE"
+          }
+        ]
+      },
+      {
+        "note_id": 14,
+        "missing": [
+          {
+            "text": "Driver's License: DL99887766",
+            "type": "LICENSE_ID"
+          }
+        ],
+        "false_positives": [
+          {
+            "text": "Driver",
+            "type": "ORGANIZATION"
+          }
+        ]
+      },
+      {
+        "note_id": 16,
+        "missing": [],
+        "false_positives": [
+          {
+            "text": "9000011111",
+            "type": "DATE"
+          },
+          {
+            "text": "9000011111",
+            "type": "US_BANK_NUMBER"
+          },
+          {
+            "text": "9000011111",
+            "type": "US_DRIVER_LICENSE"
+          },
+          {
+            "text": "test.org",
+            "type": "URL"
+          }
+        ]
+      },
+      {
+        "note_id": 17,
+        "missing": [
+          {
+            "text": "age 91",
+            "type": "AGE_OVER_89"
+          },
+          {
+            "text": "City Care Hospital",
+            "type": "FACILITY"
+          }
+        ],
+        "false_positives": [
+          {
+            "text": "City Care Hospital",
+            "type": "ORGANIZATION"
+          }
+        ]
+      },
+      {
+        "note_id": 18,
+        "missing": [
+          {
+            "text": "221B Baker Street",
+            "type": "LOCATION"
+          }
+        ],
+        "false_positives": [
+          {
+            "text": "Baker",
+            "type": "PERSON"
+          }
+        ]
+      },
+      {
+        "note_id": 19,
+        "missing": [
+          {
+            "text": "MRN: XY123456",
+            "type": "MRN"
+          }
+        ],
+        "false_positives": [
+          {
+            "text": "XY123456",
+            "type": "US_DRIVER_LICENSE"
+          }
+        ]
+      },
+      {
+        "note_id": 20,
+        "missing": [
+          {
+            "text": "90 years old",
+            "type": "AGE_OVER_89"
+          }
+        ],
+        "false_positives": [
+          {
+            "text": "90 years old",
+            "type": "DATE"
+          }
+        ]
+      }
+    ]
+  },
+  "hybrid_detector": {
+    "overall": {
+      "precision": 0.9792,
+      "recall": 1.0,
+      "f1": 0.9895,
+      "leaked_notes": 0,
+      "total_notes": 20,
+      "leak_rate": 0.0
+    },
+    "per_entity": {
+      "ACCOUNT_ID": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "AGE_OVER_89": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0
+      },
+      "DATE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0
+      },
+      "EMAIL": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0
+      },
+      "FACILITY": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0
+      },
+      "HEALTH_PLAN_ID": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "IP_ADDRESS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "LICENSE_ID": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "LOCATION": {
+        "precision": 0.8333,
+        "recall": 1.0,
+        "f1": 0.9091,
+        "tp": 5,
+        "fp": 1,
+        "fn": 0
+      },
+      "MRN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0
+      },
+      "PERSON": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 20,
+        "fp": 0,
+        "fn": 0
+      },
+      "PHONE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0
+      },
+      "SSN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    "errors": [
+      {
+        "note_id": 8,
+        "missing": [],
+        "false_positives": [
+          {
+            "text": "Texas",
+            "type": "LOCATION"
+          }
+        ]
+      }
+    ]
+  }
+}

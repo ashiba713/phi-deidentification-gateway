@@ -1,0 +1,66 @@
+[
+  {
+    "note_id": 1,
+    "original_note": "Patient Alice Morgan visited 14 Oak Street, Boston on 04/12/2025.",
+    "masked_note": "Patient [PERSON_1] visited [LOCATION_1], [LOCATION_2] on [DATE_1].",
+    "original_answer": "*   Patient Alice Morgan had a visit.\n*   The visit occurred at 14 Oak Street, Boston.\n*   The date of the visit was 04/12/2025.",
+    "masked_answer": "*   Patient [PERSON_1] had a clinical visit.\n*   The visit occurred at [LOCATION_1], [LOCATION_2].\n*   The date of the visit was [DATE_1].",
+    "restored_answer": "*   Patient Alice Morgan had a clinical visit.\n*   The visit occurred at 14 Oak Street, Boston.\n*   The date of the visit was 04/12/2025.",
+    "placeholder_mapping": {
+      "[PERSON_1]": "Alice Morgan",
+      "[LOCATION_1]": "14 Oak Street",
+      "[LOCATION_2]": "Boston",
+      "[DATE_1]": "04/12/2025"
+    }
+  },
+  {
+    "note_id": 2,
+    "original_note": "Dr. Robert Wilson treated Mary Jones at Green Valley Hospital.",
+    "masked_note": "[PERSON_1] treated [PERSON_2] at [FACILITY_1].",
+    "original_answer": "*   Patient Mary Jones received treatment.\n*   Dr. Robert Wilson was the treating physician.\n*   Treatment took place at Green Valley Hospital.",
+    "masked_answer": "*   [PERSON_1] provided treatment.\n*   [PERSON_2] was the patient who received treatment.\n*   The treatment occurred at [FACILITY_1].",
+    "restored_answer": "*   Dr. Robert Wilson provided treatment.\n*   Mary Jones was the patient who received treatment.\n*   The treatment occurred at Green Valley Hospital.",
+    "placeholder_mapping": {
+      "[PERSON_1]": "Dr. Robert Wilson",
+      "[PERSON_2]": "Mary Jones",
+      "[FACILITY_1]": "Green Valley Hospital"
+    }
+  },
+  {
+    "note_id": 3,
+    "original_note": "Patient David Brown, age 94, called 9876543210.",
+    "masked_note": "Patient [PERSON_1], [AGE_OVER_89_1], called [PHONE_NUMBER_1].",
+    "original_answer": "*   Patient identified as David Brown.\n*   Patient is 94 years old.\n*   Patient called 9876543210.",
+    "masked_answer": "*   Patient [PERSON_1], [AGE_OVER_89_1].\n*   The patient initiated a call.\n*   The call was made to [PHONE_NUMBER_1].",
+    "restored_answer": "*   Patient David Brown, age 94.\n*   The patient initiated a call.\n*   The call was made to 9876543210.",
+    "placeholder_mapping": {
+      "[PERSON_1]": "David Brown",
+      "[AGE_OVER_89_1]": "age 94",
+      "[PHONE_NUMBER_1]": "9876543210"
+    }
+  },
+  {
+    "note_id": 4,
+    "original_note": "Contact Emily Davis at emily.davis@example.com.",
+    "masked_note": "Contact [PERSON_1] at [EMAIL_ADDRESS_1].",
+    "original_answer": "*   The note instructs to contact Emily Davis.\n*   Her email address is emily.davis@example.com.\n*   No specific symptoms, diagnoses, or treatments are detailed in",
+    "masked_answer": "*   An instruction to contact [PERSON_1] was documented.\n*   The contact method specified is email.\n*   The email address provided is [EMAIL_ADDRESS_1].",
+    "restored_answer": "*   An instruction to contact Emily Davis was documented.\n*   The contact method specified is email.\n*   The email address provided is emily.davis@example.com.",
+    "placeholder_mapping": {
+      "[PERSON_1]": "Emily Davis",
+      "[EMAIL_ADDRESS_1]": "emily.davis@example.com"
+    }
+  },
+  {
+    "note_id": 5,
+    "original_note": "MRN: AB12345678 belongs to patient Michael Scott.",
+    "masked_note": "[MRN_1] belongs to patient [PERSON_1].",
+    "original_answer": "Here is a summary of the clinical note:\n\n*   Patient identified as Michael Scott.\n*   Patient's Medical Record Number (MRN) is AB12345678",
+    "masked_answer": "*   Patient identified as [PERSON_1].\n*   Medical Record Number (MRN): [MRN_1].\n*   No further clinical details (symptoms, diagnoses, treatments, or follow-up) are provided in this note.",
+    "restored_answer": "*   Patient identified as Michael Scott.\n*   Medical Record Number (MRN): MRN: AB12345678.\n*   No further clinical details (symptoms, diagnoses, treatments, or follow-up) are provided in this note.",
+    "placeholder_mapping": {
+      "[MRN_1]": "MRN: AB12345678",
+      "[PERSON_1]": "Michael Scott"
+    }
+  }
+]

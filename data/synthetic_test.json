@@ -1,0 +1,404 @@
+[
+  {
+    "id": 1,
+    "text": "Patient Alice Morgan visited 14 Oak Street, Boston on 04/12/2025.",
+    "entities": [
+      {
+        "start": 8,
+        "end": 20,
+        "text": "Alice Morgan",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 29,
+        "end": 42,
+        "text": "14 Oak Street",
+        "entity_type": "LOCATION"
+      },
+      {
+        "start": 44,
+        "end": 50,
+        "text": "Boston",
+        "entity_type": "LOCATION"
+      },
+      {
+        "start": 54,
+        "end": 64,
+        "text": "04/12/2025",
+        "entity_type": "DATE"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "Dr. Robert Wilson treated Mary Jones at Green Valley Hospital.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "text": "Dr. Robert Wilson",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 26,
+        "end": 36,
+        "text": "Mary Jones",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 40,
+        "end": 61,
+        "text": "Green Valley Hospital",
+        "entity_type": "FACILITY"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "Patient David Brown, age 94, called 9876543210.",
+    "entities": [
+      {
+        "start": 8,
+        "end": 19,
+        "text": "David Brown",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 21,
+        "end": 27,
+        "text": "age 94",
+        "entity_type": "AGE_OVER_89"
+      },
+      {
+        "start": 36,
+        "end": 46,
+        "text": "9876543210",
+        "entity_type": "PHONE"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "Contact Emily Davis at emily.davis@example.com.",
+    "entities": [
+      {
+        "start": 8,
+        "end": 19,
+        "text": "Emily Davis",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 23,
+        "end": 46,
+        "text": "emily.davis@example.com",
+        "entity_type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "text": "MRN: AB12345678 belongs to patient Michael Scott.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "text": "MRN: AB12345678",
+        "entity_type": "MRN"
+      },
+      {
+        "start": 35,
+        "end": 48,
+        "text": "Michael Scott",
+        "entity_type": "PERSON"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "text": "Patient Sarah Lee visited on March 15, 2025.",
+    "entities": [
+      {
+        "start": 8,
+        "end": 17,
+        "text": "Sarah Lee",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 29,
+        "end": 43,
+        "text": "March 15, 2025",
+        "entity_type": "DATE"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "text": "Call fax 2125550199 for patient James Miller.",
+    "entities": [
+      {
+        "start": 9,
+        "end": 19,
+        "text": "2125550199",
+        "entity_type": "PHONE"
+      },
+      {
+        "start": 32,
+        "end": 44,
+        "text": "James Miller",
+        "entity_type": "PERSON"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "text": "Patient Linda Green lives at 55 Lake Road, Austin, Texas.",
+    "entities": [
+      {
+        "start": 8,
+        "end": 19,
+        "text": "Linda Green",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 29,
+        "end": 41,
+        "text": "55 Lake Road",
+        "entity_type": "LOCATION"
+      },
+      {
+        "start": 43,
+        "end": 49,
+        "text": "Austin",
+        "entity_type": "LOCATION"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "text": "SSN 123-45-6789 was recorded for Daniel White.",
+    "entities": [
+      {
+        "start": 4,
+        "end": 15,
+        "text": "123-45-6789",
+        "entity_type": "SSN"
+      },
+      {
+        "start": 33,
+        "end": 45,
+        "text": "Daniel White",
+        "entity_type": "PERSON"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "text": "Patient aged 88 visited on 09/10/2024.",
+    "entities": [
+      {
+        "start": 27,
+        "end": 37,
+        "text": "09/10/2024",
+        "entity_type": "DATE"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "text": "Follow-up for 3 days after surgery for patient Peter Adams.",
+    "entities": [
+      {
+        "start": 47,
+        "end": 58,
+        "text": "Peter Adams",
+        "entity_type": "PERSON"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "text": "Member ID: HP123456789 for patient Olivia Martin.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 22,
+        "text": "Member ID: HP123456789",
+        "entity_type": "HEALTH_PLAN_ID"
+      },
+      {
+        "start": 35,
+        "end": 48,
+        "text": "Olivia Martin",
+        "entity_type": "PERSON"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "text": "Account Number: 7788990011 belongs to George King.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 26,
+        "text": "Account Number: 7788990011",
+        "entity_type": "ACCOUNT_ID"
+      },
+      {
+        "start": 38,
+        "end": 49,
+        "text": "George King",
+        "entity_type": "PERSON"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "text": "Driver's License: DL99887766 belongs to Susan Clark.",
+    "entities": [
+      {
+        "start": 0,
+        "end": 28,
+        "text": "Driver's License: DL99887766",
+        "entity_type": "LICENSE_ID"
+      },
+      {
+        "start": 40,
+        "end": 51,
+        "text": "Susan Clark",
+        "entity_type": "PERSON"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "text": "Patient William Turner visited on 2025-06-18.",
+    "entities": [
+      {
+        "start": 8,
+        "end": 22,
+        "text": "William Turner",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 34,
+        "end": 44,
+        "text": "2025-06-18",
+        "entity_type": "DATE"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "text": "Contact nurse Rachel Adams at 9000011111 or rachel@test.org.",
+    "entities": [
+      {
+        "start": 14,
+        "end": 26,
+        "text": "Rachel Adams",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 30,
+        "end": 40,
+        "text": "9000011111",
+        "entity_type": "PHONE"
+      },
+      {
+        "start": 44,
+        "end": 59,
+        "text": "rachel@test.org",
+        "entity_type": "EMAIL"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "text": "Patient Henry Ford, age 91, admitted to City Care Hospital.",
+    "entities": [
+      {
+        "start": 8,
+        "end": 18,
+        "text": "Henry Ford",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 20,
+        "end": 26,
+        "text": "age 91",
+        "entity_type": "AGE_OVER_89"
+      },
+      {
+        "start": 40,
+        "end": 58,
+        "text": "City Care Hospital",
+        "entity_type": "FACILITY"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "text": "Visit record for Emma Watson at 221B Baker Street on 12/01/2025.",
+    "entities": [
+      {
+        "start": 17,
+        "end": 28,
+        "text": "Emma Watson",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 32,
+        "end": 49,
+        "text": "221B Baker Street",
+        "entity_type": "LOCATION"
+      },
+      {
+        "start": 53,
+        "end": 63,
+        "text": "12/01/2025",
+        "entity_type": "DATE"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "text": "Patient Mark Taylor has IP 192.168.1.20 and record MRN: XY123456.",
+    "entities": [
+      {
+        "start": 8,
+        "end": 19,
+        "text": "Mark Taylor",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 27,
+        "end": 39,
+        "text": "192.168.1.20",
+        "entity_type": "IP_ADDRESS"
+      },
+      {
+        "start": 51,
+        "end": 64,
+        "text": "MRN: XY123456",
+        "entity_type": "MRN"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "text": "Patient Sophia Hall is 90 years old. Appointment in 2 weeks.",
+    "entities": [
+      {
+        "start": 8,
+        "end": 19,
+        "text": "Sophia Hall",
+        "entity_type": "PERSON"
+      },
+      {
+        "start": 23,
+        "end": 35,
+        "text": "90 years old",
+        "entity_type": "AGE_OVER_89"
+      }
+    ]
+  }
+]
