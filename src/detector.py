@@ -19,6 +19,20 @@ nlp_config = {
     ],
 }
 
+try:
+    import spacy
+    spacy.load("en_core_web_sm")
+except OSError:
+    import subprocess
+    import sys
+    subprocess.check_call([
+        sys.executable,
+        "-m",
+        "spacy",
+        "download",
+        "en_core_web_sm"
+    ])
+
 provider = NlpEngineProvider(nlp_configuration=nlp_config)
 nlp_engine = provider.create_engine()
 
