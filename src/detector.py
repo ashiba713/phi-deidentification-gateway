@@ -20,14 +20,6 @@ nlp_config = {
     ],
 }
 
-try:
-    spacy.load("en_core_web_sm")
-except OSError as e:
-    raise RuntimeError(
-        "spaCy English model is not installed. "
-        "Check the Streamlit dependencies."
-    ) from e
-
 provider = NlpEngineProvider(nlp_configuration=nlp_config)
 nlp_engine = provider.create_engine()
 
