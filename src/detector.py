@@ -1,4 +1,5 @@
 import re
+import os
 from pathlib import Path
 
 import torch
@@ -128,18 +129,37 @@ model = None
 id2label = None
 
 
+def get_model_source():
+    # Prefer the locally trained model during local development.
+    if (MODEL_DIR / "config.json").exists():
+        return str(MODEL_DIR)
+
+    # On Streamlit Cloud, read the Hugging Face repository ID.
+    model_id = os.getenv("HF_MODEL_ID")
+    if not model_id:
+        try:
+            import streamlit as st
+            model_id = st.secrets.get("HF_MODEL_ID")
+        except Exception:
+            model_id = None
+
+    if not model_id:
+        raise RuntimeError(
+            "Trained PHI model not found. Set HF_MODEL_ID "
+            "to your Hugging Face model repository."
+        )
+    return model_id
+
+
 def load_phi_model():
     global tokenizer, model, id2label
 
     if model is not None:
         return
 
-    if not MODEL_DIR.exists():
-        print("Trained model not found. Skipping model detection.")
-        return
-
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_DIR)
-    model = AutoModelForTokenClassification.from_pretrained(MODEL_DIR)
+    model_source = get_model_source()
+    tokenizer = AutoTokenizer.from_pretrained(model_source)
+    model = AutoModelForTokenClassification.from_pretrained(model_source)
     model.eval()
 
     id2label = {
